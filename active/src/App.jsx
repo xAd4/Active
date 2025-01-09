@@ -17,13 +17,7 @@ import { PortfolioDetail } from "./pages/PortfolioDetail";
 export const App = () => {
   const scripts = [
     "./src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
-    "./src/assets/vendor/php-email-form/validate.js",
-    "./src/assets/vendor/aos/aos.js",
-    "./src/assets/vendor/swiper/swiper-bundle.min.js",
-    "./src/assets/vendor/purecounter/purecounter_vanilla.js",
     "./src/assets/vendor/glightbox/js/glightbox.min.js",
-    "./src/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js",
-    "./src/assets/vendor/isotope-layout/isotope.pkgd.min.js",
   ];
 
   scripts.forEach(useScript);
