@@ -14,6 +14,7 @@ import { SignIn } from "./pages/SignIn";
 import { Contact } from "./pages/Contact";
 import { BlogDetail } from "./pages/BlogDetail";
 import { PortfolioDetail } from "./pages/PortfolioDetail";
+import { Profile } from "./pages/Profile";
 
 export const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem("accessToken");
@@ -50,6 +51,7 @@ export const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
       </main>

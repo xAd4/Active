@@ -7,7 +7,7 @@ export const NavBar = () => {
 
   const handleLogout = () => {
     logout();
-    alert("Has cerrado sesión.");
+    console.log("Has cerrado sesión.");
   };
 
   return (
@@ -44,12 +44,10 @@ export const NavBar = () => {
           // If there's user logged
           <>
             <li>
-              <NavLink to="/">{user.name}</NavLink>
+              <NavLink to="/profile">{user.name}</NavLink>
             </li>
             <li>
-              <button onClick={handleLogout} className="logout-button">
-                Log Out
-              </button>
+              <NavLink onClick={handleLogout}>Log Out</NavLink>
             </li>
           </>
         )}

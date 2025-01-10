@@ -24,7 +24,7 @@ export const ContactSection = () => {
 
     try {
       const response = await sendContactMessage(formData);
-      alert("Mensaje enviado con éxito. Gracias por contactarnos.");
+      console.log("Mensaje enviado con éxito. Gracias por contactarnos.");
       console.log("Respuesta del servidor:", response);
       setFormData({
         name: "",
@@ -33,7 +33,9 @@ export const ContactSection = () => {
         message: "",
       });
     } catch (error) {
-      alert("Error al enviar el mensaje. Inténtalo de nuevo más tarde.");
+      alert(
+        "Error al enviar el mensaje. Prueba iniciar sesión o intenta más tarde."
+      );
     } finally {
       setLoading(false);
     }

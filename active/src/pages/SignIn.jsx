@@ -21,13 +21,13 @@ export const SignIn = () => {
 
     try {
       const data = await loginUser(formData);
-      login(formData.fullName); // Actualiza el estado global
+      login(formData.fullName);
       localStorage.setItem("accessToken", data.access);
       localStorage.setItem("refreshToken", data.refresh);
       localStorage.setItem("userName", formData.fullName);
-      alert("Inicio de sesión exitoso.");
+      console.log("Inicio de sesión exitoso.");
     } catch (error) {
-      alert("Error al iniciar sesión. Verifica tus credenciales.");
+      console.warn("Error al iniciar sesión. Verifica tus credenciales.");
     } finally {
       setLoading(false);
     }
@@ -113,12 +113,12 @@ export const SignIn = () => {
             </div>
           </div>
 
-          <div className="remember-me">
+          {/*<div className="remember-me">
             <label className="checkbox-label">
               <input type="checkbox" className="checkbox" />
               <span className="checkbox-text">Keep me signed in</span>
             </label>
-          </div>
+          </div>*/}
 
           <button type="submit" disabled={loading} className="submit-btn">
             {loading ? (

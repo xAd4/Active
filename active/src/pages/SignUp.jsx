@@ -20,9 +20,9 @@ export const SignUp = () => {
     try {
       const data = await registerUser(formData);
       console.log("Usuario registrado:", data);
-      alert("Registro exitoso. Ahora puedes iniciar sesión.");
+      console.log("Registro exitoso. Ahora puedes iniciar sesión.");
     } catch (error) {
-      alert("Hubo un error al registrar el usuario.");
+      console.warn("Hubo un error al registrar el usuario.");
     } finally {
       setLoading(false);
     }
