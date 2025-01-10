@@ -1,5 +1,5 @@
+import { PageTitle } from "../components/portfolio/PageTitle";
 import { PortfolioSection } from "../components/portfolio/PortfolioSection";
-import { PageTitle } from "../components/services/PageTitle";
 
 export const Portfolio = () => {
   return (

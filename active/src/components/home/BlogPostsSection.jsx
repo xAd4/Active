@@ -1,4 +1,50 @@
 import { NavLink } from "react-router-dom";
+import { BlogPostDetail } from "./blogPostDetail/BlogPostDetail";
+
+const blogs = [
+  {
+    id: 1,
+    image: "./src/assets/img/img_h_4.jpg",
+    category: "Development",
+    date: "July 20, 2020",
+    title: "There live the blind texts they live",
+    description:
+      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    author: {
+      name: "Winston Gold",
+      position: "Lead Product Designer",
+      authorImage: "./src/assets/img/team/team-3.jpg",
+    },
+  },
+  {
+    id: 2,
+    image: "./src/assets/img/img_h_2.jpg",
+    category: "Development",
+    date: "July 20, 2020",
+    title: "There live the blind texts they live",
+    description:
+      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    author: {
+      name: "Winston Gold",
+      position: "Lead Product Designer",
+      authorImage: "./src/assets/img/team/team-2.jpg",
+    },
+  },
+  {
+    id: 3,
+    image: "./src/assets/img/img_h_3.jpg",
+    category: "Development",
+    date: "July 20, 2020",
+    title: "There live the blind texts they live",
+    description:
+      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    author: {
+      name: "Winston Gold",
+      position: "Lead Product Designer",
+      authorImage: "./src/assets/img/team/team-1.jpg",
+    },
+  },
+];
 
 export const BlogPostsSection = () => {
   return (
@@ -12,134 +58,19 @@ export const BlogPostsSection = () => {
         {/* End Section Title */}
         <div className="container">
           <div className="row gy-4">
-            <div className="col-md-6 col-lg-4">
-              <div className="post-entry">
-                <NavLink to="/blogDetail" className="thumb d-block">
-                  <img
-                    src="./src/assets/img/img_h_4.jpg"
-                    alt="Image"
-                    className="img-fluid rounded"
-                  />
-                </NavLink>
-                <div className="post-content">
-                  <div className="meta">
-                    <NavLink to="/blogDetail" className="cat">
-                      Development
-                    </NavLink>{" "}
-                    •<span className="date">July 20, 2020</span>
-                  </div>
-                  <h3>
-                    <NavLink to="/blogDetail">
-                      There live the blind texts they live
-                    </NavLink>
-                  </h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <div className="d-flex author align-items-center">
-                    <div className="pic">
-                      <img
-                        src="./src/assets/img/team/team-3.jpg"
-                        alt="Image"
-                        className="img-fluid rounded-circle"
-                      />
-                    </div>
-                    <div className="author-name">
-                      <strong className="d-block">Winston Gold</strong>
-                      <span className="">Lead Product Designer</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-4">
-              <div className="post-entry">
-                <NavLink to="/blogDetail" className="thumb d-block">
-                  <img
-                    src="./src/assets/img/img_h_2.jpg"
-                    alt="Image"
-                    className="img-fluid rounded"
-                  />
-                </NavLink>
-                <div className="post-content">
-                  <div className="meta">
-                    <NavLink to="/blogDetail" className="cat">
-                      Development
-                    </NavLink>{" "}
-                    •<span className="date">July 20, 2020</span>
-                  </div>
-                  <h3>
-                    <NavLink to="/blogDetail">
-                      There live the blind texts they live
-                    </NavLink>
-                  </h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <div className="d-flex author align-items-center">
-                    <div className="pic">
-                      <img
-                        src="./src/assets/img/team/team-2.jpg"
-                        alt="Image"
-                        className="img-fluid rounded-circle"
-                      />
-                    </div>
-                    <div className="author-name">
-                      <strong className="d-block">Winston Gold</strong>
-                      <span className="">Lead Product Designer</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-4">
-              <div className="post-entry">
-                <NavLink to="/blogDetail" className="thumb d-block">
-                  <img
-                    src="./src/assets/img/img_h_3.jpg"
-                    alt="Image"
-                    className="img-fluid rounded"
-                  />
-                </NavLink>
-                <div className="post-content">
-                  <div className="meta">
-                    <NavLink to="/blogDetail" className="cat">
-                      Development
-                    </NavLink>{" "}
-                    •<span className="date">July 20, 2020</span>
-                  </div>
-                  <h3>
-                    <NavLink to="/blogDetail">
-                      There live the blind texts they live
-                    </NavLink>
-                  </h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <div className="d-flex author align-items-center">
-                    <div className="pic">
-                      <img
-                        src="./src/assets/img/team/team-1.jpg"
-                        alt="Image"
-                        className="img-fluid rounded-circle"
-                      />
-                    </div>
-                    <div className="author-name">
-                      <strong className="d-block">Winston Gold</strong>
-                      <span className="">Lead Product Designer</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {blogs.map(
+              ({ id, image, category, date, title, description, author }) => (
+                <BlogPostDetail
+                  key={id}
+                  image={image}
+                  category={category}
+                  date={date}
+                  title={title}
+                  description={description}
+                  author={author}
+                />
+              )
+            )}
           </div>
         </div>
       </section>

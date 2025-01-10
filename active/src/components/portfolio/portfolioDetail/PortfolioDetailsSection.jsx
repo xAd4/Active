@@ -6,25 +6,6 @@ export const PortfolioDetailsSection = () => {
       <section id="portfolio-details" className="portfolio-details section">
         <div className="container">
           <div className="portfolio-details-slider swiper init-swiper">
-            <script type="application/json" className="swiper-config">
-              {JSON.stringify({
-                loop: true,
-                speed: 600,
-                autoplay: {
-                  delay: 5000,
-                },
-                slidesPerView: "auto",
-                navigation: {
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                },
-                pagination: {
-                  el: ".swiper-pagination",
-                  type: "bullets",
-                  clickable: true,
-                },
-              })}
-            </script>
             <div className="swiper-wrapper align-items-center">
               <div className="swiper-slide">
                 <img src="./src/assets/img/portfolio/app-1.jpg" alt="" />

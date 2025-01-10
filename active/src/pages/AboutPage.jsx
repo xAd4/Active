@@ -1,6 +1,6 @@
 import { AboutTwoSection } from "../components/about/AboutTwoSection";
 import { PageTitle } from "../components/about/PageTitle";
-import { ServicesSection } from "../components/about/ServicesSection";
+// import { ServicesSection } from "../components/about/ServicesSection";
 import { StatsSection } from "../components/about/StatsSection";
 
 export const AboutPage = () => {
@@ -17,7 +17,7 @@ export const AboutPage = () => {
           {/* /About 2 Section */}
 
           {/* Services Section */}
-          <ServicesSection />
+          {/*<ServicesSection />*/}
           {/* /Services Section */}
 
           {/* Stats Section */}

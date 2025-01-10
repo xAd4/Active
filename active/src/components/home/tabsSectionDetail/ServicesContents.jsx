@@ -2,7 +2,7 @@
 export const ServicesContents = ({ icon, title, detail }) => {
   return (
     <>
-      <a href="#" className="service-item link horizontal d-flex active">
+      <a className="service-item link horizontal d-flex active">
         <div className="service-icon color-1 mb-4">
           <i className={icon}></i>
         </div>

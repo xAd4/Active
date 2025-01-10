@@ -1,4 +1,32 @@
+import { ServicesDetail } from "./servicesDetail/ServicesDetail";
+
 export const ServicesTwoSection = () => {
+  const services = [
+    {
+      id: 1,
+      icon: "bi bi-search",
+      title: "Square",
+      description: "Separated they live in Bookmarksgrove right at the coast",
+    },
+    {
+      id: 2,
+      icon: "bi bi-command",
+      title: "Technology",
+      description: "Separated they live in Bookmarksgrove right at the coast",
+    },
+    {
+      id: 3,
+      icon: "bi bi-grid",
+      title: "Brilliant Ideas",
+      description: "Separated they live in Bookmarksgrove right at the coast",
+    },
+    {
+      id: 4,
+      icon: "bi bi-globe",
+      title: "Blueprint",
+      description: "Separated they live in Bookmarksgrove right at the coast",
+    },
+  ];
   return (
     <>
       <section id="services-2" className="services-2 section">
@@ -21,59 +49,14 @@ export const ServicesTwoSection = () => {
             </div>
             <div className="col-md-6 col-lg-6 ps-lg-5">
               <div className="row">
-                <div className="col-6 col-sm-6 col-md-6 col-lg-6">
-                  <div className="services-item">
-                    <div className="services-icon">
-                      <i className="bi bi-search"></i>
-                    </div>
-                    <div>
-                      <h3>Square</h3>
-                      <p>
-                        Separated they live in Bookmarksgrove right at the coast
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-6 col-sm-6 col-md-6 col-lg-6">
-                  <div className="services-item">
-                    <div className="services-icon">
-                      <i className="bi bi-command"></i>
-                    </div>
-                    <div>
-                      <h3>Technology</h3>
-                      <p>
-                        Separated they live in Bookmarksgrove right at the coast
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-6 col-sm-6 col-md-6 col-lg-6">
-                  <div className="services-item">
-                    <div className="services-icon">
-                      <i className="bi bi-grid"></i>
-                    </div>
-                    <div>
-                      <h3>Brilliant Ideas</h3>
-                      <p>
-                        Separated they live in Bookmarksgrove right at the coast
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-6 col-sm-6 col-md-6 col-lg-6">
-                  <div className="services-item">
-                    <div className="services-icon">
-                      <i className="bi bi-globe"></i>
-                    </div>
-                    <div>
-                      <h3>Blueprint</h3>
-                      <p>
-                        Separated they live in Bookmarksgrove right at the coast
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                {services.map(({ id, icon, title, description }) => (
+                  <ServicesDetail
+                    key={id}
+                    icon={icon}
+                    title={title}
+                    description={description}
+                  />
+                ))}
               </div>
             </div>
           </div>

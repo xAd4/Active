@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <>
@@ -13,9 +15,9 @@ export const Footer = () => {
                   language ocean.
                 </p>
                 <p className="mb-0">
-                  <a href="#" className="btn-learn-more">
+                  <NavLink to="/about" className="btn-learn-more">
                     Learn more
-                  </a>
+                  </NavLink>
                 </p>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { PageTitle } from "../components/about/PageTitle";
+// import { BlogModern } from "../components/blog/BlogModern";
 import { BlogPaginationSection } from "../components/blog/BlogPaginationSection";
 import { BlogPostsTwoSection } from "../components/blog/BlogPostsTwoSection";
 
@@ -17,6 +18,8 @@ export const Blog = () => {
         {/* Blog Pagination Section */}
         <BlogPaginationSection />
         {/* /Blog Pagination Section */}
+
+        {/*<BlogModern />*/}
       </main>
     </div>
   );
