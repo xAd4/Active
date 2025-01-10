@@ -182,7 +182,8 @@ h6 {
   }
 
   .navmenu a,
-  .navmenu a:focus {
+  .navmenu a:focus,
+  .logout-button {
     color: var(--nav-color);
     padding: 18px 15px;
     font-size: 16px;

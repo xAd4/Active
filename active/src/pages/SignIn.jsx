@@ -1,25 +1,33 @@
-import { useState } from "react";
+/* eslint-disable no-unused-vars */
+import { useContext, useState } from "react";
 import { Eye, EyeOff, LogIn } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { loginUser } from "../helpers/api";
+import { AuthContext } from "../contexts/AuthContext";
 
 export const SignIn = () => {
   const [formData, setFormData] = useState({
+    fullName: "",
     email: "",
     password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { login } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Form submitted:", formData);
+      const data = await loginUser(formData);
+      login(formData.fullName); // Actualiza el estado global
+      localStorage.setItem("accessToken", data.access);
+      localStorage.setItem("refreshToken", data.refresh);
+      localStorage.setItem("userName", formData.fullName);
+      alert("Inicio de sesión exitoso.");
     } catch (error) {
-      console.error("Error:", error);
+      alert("Error al iniciar sesión. Verifica tus credenciales.");
     } finally {
       setLoading(false);
     }
@@ -46,6 +54,21 @@ export const SignIn = () => {
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="label" htmlFor="email">
+              Full Name
+            </label>
+            <input
+              id="fullName"
+              name="fullName"
+              type="fullName"
+              required
+              value={formData.fullName}
+              onChange={handleChange}
+              className="input"
+              placeholder="John Doe"
+            />
+          </div>
+          <div className="form-group">
+            <label className="label" htmlFor="fullName">
               Email
             </label>
             <input

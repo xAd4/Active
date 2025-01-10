@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Routes, Navigate, Route } from "react-router";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -13,6 +14,12 @@ import { SignIn } from "./pages/SignIn";
 import { Contact } from "./pages/Contact";
 import { BlogDetail } from "./pages/BlogDetail";
 import { PortfolioDetail } from "./pages/PortfolioDetail";
+
+export const PrivateRoute = ({ children }) => {
+  const token = localStorage.getItem("accessToken");
+
+  return token ? children : <Navigate to="/signin" />;
+};
 
 export const App = () => {
   const scripts = [

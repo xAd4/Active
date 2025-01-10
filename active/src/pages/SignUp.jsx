@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { Eye, EyeOff, UserPlus } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { registerUser } from "../helpers/api";
 
 export const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -16,11 +18,11 @@ export const SignUp = () => {
     setLoading(true);
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Form submitted:", formData);
+      const data = await registerUser(formData);
+      console.log("Usuario registrado:", data);
+      alert("Registro exitoso. Ahora puedes iniciar sesión.");
     } catch (error) {
-      console.error("Error:", error);
+      alert("Hubo un error al registrar el usuario.");
     } finally {
       setLoading(false);
     }
