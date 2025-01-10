@@ -21,6 +21,12 @@ export const PrivateRoute = ({ children }) => {
   return token ? children : <Navigate to="/signin" />;
 };
 
+const isAuthenticated = () => !!localStorage.getItem("accessToken");
+
+export const ProtectedRoute = ({ children }) => {
+  return isAuthenticated() ? children : <Navigate to="/signin" />;
+};
+
 export const App = () => {
   const scripts = [
     "./src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",

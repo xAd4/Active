@@ -1,5 +1,6 @@
 import { ContactSection } from "../components/contact/ContactSection";
 import { PageTitle } from "../components/contact/PageTitle";
+import { ProtectedRoute } from "../App";
 
 export const Contact = () => {
   return (
@@ -10,7 +11,9 @@ export const Contact = () => {
         {/* End Page Title */}
 
         {/* Contact Section */}
-        <ContactSection />
+        <ProtectedRoute>
+          <ContactSection />
+        </ProtectedRoute>
         {/* /Contact Section */}
       </main>
     </div>
